@@ -1,0 +1,41 @@
+---
+name: Sync the template repository
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+  push:
+    branches: main
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+
+    outputs:
+      repository: ${{ steps.metadata.outputs.repository }}
+      dockerfile: ${{ steps.dockerfile.outputs.exists }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - id: metadata
+      uses: ahmadnassri/action-metadata@v1
+
+  sync:
+
+    needs:
+    - metadata
+
+    # only runs if the repository is a template
+    if: ${{ fromJSON(needs.metadata.outputs.repository).is_template }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Queue
+      uses: ahmadnassri/action-workflow-queue@v1.1
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Sync
+      uses: ahmadnassri/action-template-repository-sync@v1.6.0
+      with:
+        github-token: ${{ secrets.GH_TOKEN }}

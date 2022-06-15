@@ -1,0 +1,9 @@
+---
+# File is synced from Kong/template-generic and will be overwritten
+extends: default
+rules:
+  line-length: disable
+  comments: disable
+  indentation:
+    spaces: 2
+    indent-sequences: consistent

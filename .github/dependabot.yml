@@ -1,0 +1,13 @@
+---
+# File is synced from Kong/template-generic and will be overwritten
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: /
+  schedule:
+    interval: daily
+
+- package-ecosystem: github-actions
+  directory: /
+  schedule:
+    interval: daily
