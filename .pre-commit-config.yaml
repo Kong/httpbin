@@ -27,7 +27,7 @@ repos:
   rev: v1.1.0
   hooks:
   - id: detect-secrets
-    args: [--baseline, .secrets.baseline]
+    args: [--baseline, .secrets.baseline, --exclude-files, .py|.html]
 - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
   rev: 0.1.1
   hooks:

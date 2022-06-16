@@ -358,7 +358,7 @@ class HttpbinTestCase(unittest.TestCase):
     def test_digest_auth(self):
         """Test different combinations of digest auth parameters"""
         username = 'user'
-        password = 'passwd' # pragma: allowlist secret
+        password = 'passwd'
         for qop in None, 'auth', 'auth-int',:
             for algorithm in None, 'MD5', 'SHA-256', 'SHA-512':
                 for body in None, b'', b'request payload':
