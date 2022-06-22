@@ -1,9 +1,3 @@
-FROM amd64/ubuntu:focal@sha256:b2339eee806d44d6a8adc0a790f824fb71f03366dd754d400316ae5a7e3ece3e
-RUN echo "disabled"
-
-FROM arm64v8/ubuntu:focal@sha256:c01a10535d9ea3e4065dee4abdb288821b2918929f1e1584287a03e731b9176c
-RUN echo "disabled"
-
 FROM ubuntu:focal
 
 LABEL name="httpbin"
