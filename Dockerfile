@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220531
+FROM ubuntu:focal-20220801
 
 LABEL name="httpbin"
 LABEL description="A simple HTTP service."
