@@ -4,12 +4,11 @@ verify_ssl = true
 name = "httpbin"
 
 [packages]
-gunicorn = "*"
+gunicorn = ">=21.2.0"
 decorator = "*"
 brotlipy = "*"
 gevent = "*"
 Flask = "*"
-meinheld = "*"
 werkzeug = ">=2.3.7"
 six = "*"
 flasgger = "*"
