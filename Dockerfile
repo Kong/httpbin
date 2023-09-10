@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20230126
+FROM ubuntu:latest
 
 LABEL name="httpbin"
 LABEL description="A simple HTTP service."
@@ -8,13 +8,10 @@ ENV LANG=C.UTF-8
 
 RUN apt update -y && apt install python3-pip libssl-dev libffi-dev git -y && pip3 install --no-cache-dir pipenv
 
-ADD Pipfile Pipfile.lock /httpbin/
 WORKDIR /httpbin
-RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
-
-ADD . /httpbin
-RUN pip3 install --no-cache-dir /httpbin
+ADD . .
+RUN pipenv sync
 
 EXPOSE 80
 
-CMD ["gunicorn", "-b", "0.0.0.0:80", "httpbin:app", "-k", "gevent"]
+CMD ["pipenv", "run", "gunicorn", "-b", "0.0.0.0:80", "httpbin:app", "-k", "gevent"]
