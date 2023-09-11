@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:jammy-20230816
 
 LABEL name="httpbin"
 LABEL description="A simple HTTP service."
