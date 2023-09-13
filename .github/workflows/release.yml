@@ -26,7 +26,7 @@ jobs:
         strip_v: false
     - name: Docker meta
       id: meta
-      uses: crazy-max/ghaction-docker-meta@v4
+      uses: crazy-max/ghaction-docker-meta@v5
       with:
         images: kong/httpbin
         tags: |
