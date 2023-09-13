@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Set up QEMU
       id: qemu
       uses: docker/setup-qemu-action@v2
       with:
         platforms: linux/amd64,linux/arm64
     - name: Setup buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
     - name: Build Only
-      uses: docker/bake-action@v2
+      uses: docker/bake-action@v4
       with:
         files: |
           ./docker-bake.hcl
