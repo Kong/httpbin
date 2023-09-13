@@ -19,7 +19,7 @@ jobs:
       with:
         platforms: linux/amd64,linux/arm64
     - name: Setup buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
     - name: Build Only
       uses: docker/bake-action@v2
       with:
