@@ -27,7 +27,7 @@ jobs:
       run: |
         git version
         git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
-    - uses: pre-commit/action@v3.0.0
+    - uses: pre-commit/action@v3.0.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         extra_args: --from-ref origin/${{ github.base_ref }} --to-ref ${{github.event.pull_request.head.sha}}
