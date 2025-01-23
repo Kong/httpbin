@@ -21,7 +21,7 @@ jobs:
     - name: Setup buildx
       uses: docker/setup-buildx-action@v3
     - name: Build Only
-      uses: docker/bake-action@60f5d53310314dbf8c33f0c8a01042536f2f6c36 # v6
+      uses: docker/bake-action@7bff531c65a5cda33e52e43950a795b91d450f63 # v6
       with:
         source: .
         files: |
