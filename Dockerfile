@@ -22,7 +22,8 @@ RUN adduser \
 RUN chown httpbin /httpbin
 RUN chmod u+rwx /httpbin
 
-RUN apt-get update -y && apt-get install python3-pip libssl-dev libffi-dev git libcap2-bin -y
+RUN apt-get update -y && apt-get install python3-pip libssl-dev libffi-dev git libcap2-bin ca-certificates -y \
+    && apt-get install --only-upgrade ca-certificates -y
 
 ADD . .
 
